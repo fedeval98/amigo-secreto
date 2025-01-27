@@ -4,14 +4,14 @@
 let amigos = []
 let nuevoAmigo = document.getElementById("amigo")
 let listaAmigos = document.getElementById("listaAmigos")
+let resultado = document.getElementById("resultado")
 
 function capturarAmigo(){
   return nuevoAmigo.value
 }
 
-function entradaVacia(){
-  if(capturarAmigo() == null || capturarAmigo()== ""){
-    alert("Por favor, inserte un nombre")
+function validar(funcion){
+  if(funcion() == null || funcion() == ""){
     return true
   } else{
     return false
@@ -32,11 +32,22 @@ function actualizarListaAmigos(){
 }
 
 function agregarAmigo () {
-  if (entradaVacia()){
+  if (validar(capturarAmigo)){
+    alert ("Por favor, ingrese un nombre.")
     return
   }
   amigos.push(capturarAmigo())
   limpiarAmigo()
   actualizarListaAmigos()
+}
+
+function sortearAmigo() {
+  if(amigos.length == 0){
+    alert ("La lista se encuentra vacia, por favor ingrese un nombre.")
+    return
+  }
+  let indiceAmigoSorteado = Math.floor((Math.random() * amigos.length))
+  let amigoSorteado = amigos[indiceAmigoSorteado]
+  resultado.innerHTML = amigoSorteado
 }
 
