@@ -122,6 +122,8 @@ function sortearAmigo() {
    - Si intentas agregar un nombre vacío, aparecerá un mensaje de alerta.
    - Si intentas realizar un sorteo sin amigos, se mostrará un mensaje de error.
 
+5. [![Video de muestra](https://img.youtube.com/vi/VVfxIn8ucdo/hqdefault.jpg)](https://youtu.be/VVfxIn8ucdo)
+
 ---
 
 ¡Espero te diviertas organizando tu sorteo de amigo secreto! 🎉
