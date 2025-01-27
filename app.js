@@ -1,9 +1,12 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+
+//Variables declaradas.
 let amigos = []
+let nuevoAmigo = document.getElementById("amigo")
+let listaAmigos = document.getElementById("listaAmigos")
 
 function capturarAmigo(){
-  let nuevoAmigo = document.getElementById("amigo").value
-  return nuevoAmigo
+  return nuevoAmigo.value
 }
 
 function entradaVacia(){
@@ -16,8 +19,16 @@ function entradaVacia(){
 }
 
 function limpiarAmigo() {
-  let nuevoAmigo = document.getElementById("amigo")
   nuevoAmigo.value = ""
+}
+
+function actualizarListaAmigos(){
+  listaAmigos.innerHTML = ""
+  for(let x = 0; x < amigos.length; x++ ){
+    let li = document.createElement("li")
+    li.textContent = amigos[x]
+    listaAmigos.appendChild(li)
+  }
 }
 
 function agregarAmigo () {
@@ -26,5 +37,6 @@ function agregarAmigo () {
   }
   amigos.push(capturarAmigo())
   limpiarAmigo()
+  actualizarListaAmigos()
 }
 
